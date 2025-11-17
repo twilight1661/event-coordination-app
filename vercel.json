@@ -1,12 +1,18 @@
 {
-  "version": 2,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "builds": [
     {
       "src": "event-coordination-app/package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/event-coordination-app/$1" }
+    {
+      "src": "/(.*)",
+      "dest": "/event-coordination-app/$1"
+    }
   ]
 }
